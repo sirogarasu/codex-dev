@@ -1,0 +1,11 @@
+# Ignore everything by default.
+*
+
+# Keep repository metadata and documentation.
+!.gitignore
+!.gitattributes
+!DEVCONTAINER.md
+
+# Keep dev container configuration.
+!.devcontainer/
+!.devcontainer/**
