@@ -13,10 +13,6 @@
 
   "remoteUser": "node",
 
-  "containerEnv": {
-    "OPENAI_API_KEY": ""
-  },
-
   "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
 
   "customizations": {
