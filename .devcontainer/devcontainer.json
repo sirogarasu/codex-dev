@@ -5,15 +5,15 @@
     "dockerfile": "Dockerfile"
   },
 
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces",
 
   "mounts": [
-    "source=~/dev_spaces,target=/workspace,type=bind"
+    "source=${localEnv:HOME}/dev_spaces,target=/workspaces,type=bind"
   ],
 
   "remoteUser": "node",
 
-  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+  "postCreateCommand": "bash /workspaces/codex-dev/.devcontainer/postCreateCommand.sh",
 
   "customizations": {
     "vscode": {
