@@ -1,0 +1,37 @@
+{
+  // Dev Containerの表示名。
+  "name": "codex-dev-ephemeral",
+
+  // 使用するDockerfileを指定。
+  "build": {
+    // .devcontainer/Dockerfileを使ってコンテナをビルドする。
+    "dockerfile": "Dockerfile"
+  },
+
+  // コンテナ内で開くワークスペースのパス。
+  "workspaceFolder": "/workspaces",
+
+  // ホストの開発用ディレクトリをコンテナのワークスペースへマウントする。
+  "mounts": [
+    "source=${localEnv:HOME}/{dev-directory},target=/workspaces,type=bind"
+  ],
+
+  // コンテナ内のコマンドをnodeユーザーで実行する。
+  "remoteUser": "node",
+
+  // コンテナ作成後にCodexの設定とログイン状態を確認するスクリプトを実行する。
+  "postCreateCommand": "bash /workspaces/{command-directory}/.devcontainer/postCreateCommand.sh",
+
+  // VS Code固有のカスタマイズ。
+  "customizations": {
+    "vscode": {
+      // コンテナ内に自動インストールする拡張機能。
+      "extensions": [
+        // コードフォーマッター。
+        "esbenp.prettier-vscode",
+        // JavaScript/TypeScript向けのLint機能。
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

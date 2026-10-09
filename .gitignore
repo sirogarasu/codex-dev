@@ -9,3 +9,6 @@
 # Keep dev container configuration.
 !.devcontainer/
 !.devcontainer/**
+
+# Keep the local Dev Container configuration private and use the example as a template.
+.devcontainer/devcontainer.json
